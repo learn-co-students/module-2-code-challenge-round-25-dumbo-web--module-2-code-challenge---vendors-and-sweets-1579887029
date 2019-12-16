@@ -1,19 +1,21 @@
-# Rails Assessment
+# Rails Code Challenge - Sweets Vendors
 
-It's time to put our Rails know-how to the test.
+For this assessment, you'll be working with a vendors and sweets domain.
 
-## Objectives
-+ MVC
-+ REST
-+ Request/Response Cycle
-+ Form/Form Helpers
-+ ActiveRecord
-+ Validations
-+ Stay calm, focus and code
+In this repo, there is a Rails application with some features built out. Your job is to extend this code to add the functionality described in the deliverables below.
+
+## Topics
+
+- MVC
+- REST
+- Request-Response Cycle
+- Forms and Form Helpers
+- ActiveRecord
+- Validations
 
 ## Setup
 
-Before you begin, fork and clone this repo, run `bundle install`, `rake db:migrate` and `rake db:seed` to get started.
+Clone this repo. Then run `bundle install`, `rails db:migrate`, and `rails db:seed` to install dependencies and set up the database, and run `rails s` to start the server.
 
 ## The Domain
 
