@@ -19,11 +19,11 @@ Clone this repo. Then run `bundle install`, `rails db:migrate`, and `rails db:se
 
 ## The Domain
 
-We've been building an application where we can see all of the sweets that vendors are selling. The basic skeleton has been started for you already, but we'd love to have your help with finishing it. Here at Flatiron School, we tend to consume lots of sweets. WE-LOVE-SWEETS.
+This application tracks vendors who sells sweets.
 
-![img](https://media.giphy.com/media/HGe4zsOVo7Jvy/giphy.gif)
+There are three models in the domain: Sweets, Vendors, and a join model VendorSweets.
 
-**Vendors can sell many different sweets and sweets can be sold by many different vendors.** This means we need to create a model that let's us join the two together. For sake of simplicity, we'd like the model to be called `VendorSweet`. It will connect **a single sweet** and **a single vendor** together. Make sure to put the appropriate attributes on this model.
+Vendors can have many sweets. Sweets can be sold by many vendors. The join model `VendorSweet` connects **one sweet** with **one vendor**.
 
 ## Instructions
 
@@ -31,41 +31,66 @@ Update the code of the application to meet the following deliverables. Where app
 
 ***Read through these deliverables carefully to understand the requirements for this code challenge. Tackle them one by one, as they build on each other sequentially.***
 
-1. Start with creating the `VendorSweet` model. It should have an attribute for the price at which the sweet will be sold by the vendor (use an integer data type for this column: we'll treat the numbers in it as the price, in cents). We'll need to make sure to also have the appropriate migration to our schema for this to work. It is always suggested to test that our migration worked, so go into the console and try to create your first `VendorSweet` with a given `Sweet`, `Vendor`, and price.
+### 1. Create VendorSweet model
 
-2. A user should be able to visit a page with a form that will let them choose a `Vendor` and a `Sweet` and create a `VendorSweet` when they submit that form. The form should include a dropdown to select a vendor, another dropdown to select its sweet, and an input for the price. We'd like the route to this form to follow the RESTful convention (as well as the route that it should submit its form values to). Once the `VendorSweet` is created, we'd like to go to the selected vendor's show page.
+Update the schema and models to add the `VendorSweet` model. It should have:
 
-3. Let's add some validations. `VendorSweets` should *not* be able to be saved if:
-  a) the price is blank
-  b) the price is a negative number
-  c) the price is a number that isn't an integer (like 99.5) 
-We should still go to the selected vendor's show page _if the `VendorSweet` is valid_, but if the `VendorSweet` is *not* valid, we should see the form, with the values the user entered. On that page, we should also list of validation messages about what went wrong. To help you test the validations, think about some prices your users could input that _would_ and _wouldn't_ be valid. Try them out.
+- a vendor
+- a sweet
+- a price (use an integer data type for this column: we'll treat the numbers in it as the price, in cents).
 
-4. The vendor's show page should include the vendor's name (ie. Insomnia Cookies) and a list of the sweets that they sell.
+In the rails console, check that your code works by creating your first `VendorSweet` with a given `Sweet`, `Vendor`, and price.
 
-5. On the vendor's index page, we should see a list of vendor's names (we've already done this part for you). When a user clicks on a vendor's name, it should take a user to the vendor's show page.
+### 2. VendorSweet Create Form
 
-6. On the sweet's index page, we should see a list of sweet's names (we've already done this part for you). When a user clicks on a sweet's name, it should take a user to the sweet's show page.
+A user should be able to visit a page to link a vendor and a sweet. The form should let them:
 
-7. The sweet's show page should include the sweet's name.
+- choose a `Vendor` from a select dropdown
+- choose a `Sweet` from a select dropdown
+- enter a price
+- submit the form to create a `VendorSweet`
 
-### Hints / Tips
+Once the `VendorSweet` is created, the user should be redirected to the selected vendor's show page.
 
-+ Remember we want to be RESTful. What URL should show info about a particular vendor? What URL should create the vendor_sweet association? What controller actions are associated?
+### 3. Vendor show page
 
-+ When creating the vendor_sweet association think about the various ways [Rails allows us to define associations between models](http://guides.rubyonrails.org/association_basics.html))
-+ Read through this documentation if your having a bit of trouble figuring out how to make the [dropdown](http://guides.rubyonrails.org/form_helpers.html#making-select-boxes-with-ease)
+The show page for a Vendor should include:
 
-+ Also remember that [Validations are very important](http://guides.rubyonrails.org/active_record_validations.html)
+- the Vendor's name (ie. Insomnia Cookies)
+- a list of the Sweets that they sell
+- each Sweet in the list should link to that Sweet's show page
 
+### 4. Sweet Show page
 
-### Stretch 
+The Sweet's show page should include:
 
-8. Make each vendor in the list of vendors on the sweet page link to its respective vendor
+- the Sweet's name
+- a list of Vendors that sell this Sweet
+- each Vendor in the list should link to that Vendor's show page
 
-9. Make each sweet in the list of sweets on the vendor page link to its respective sweet
+### 5. Vendor Index page links
 
-10. Create a validation that prevents a `VendorSweet` from being saved if one already exists for that `Vendor` and `Sweet`. Make sure the message shown to your users makes enough sense for them to fix the error.
+On the Vendors index page, we should see a list of vendor's names. Each name should link to the Vendor's show page.
+
+### 6. Sweets index page links
+
+On the Sweets index page, we should see a list of sweet's names. Each name should link to the Sweet's show page.
+
+### 7. VendorSweet Validations
+
+Add validations to the VendorSweet model so that:
+
+- the price is not blank
+- the price is not a negative number
+- the price is an integer (not a decimal, like 99.5)
+
+Add error handling to the `VendorSweet` create action. If the VendorSweet is *not* valid, the form should show the validation error messages, with the values the user entered.
+
+### 8. Additional Validation
+
+There should only be one `VendorSweet` for any pair of `Vendor` and `Sweet`.
+
+Add a validation to ensure that there is only one VendorSweet for a Vendor and Sweet pair. If necessary, update your error handling so that this new validation is also displayed to the user.
 
 ## Rubric
 
