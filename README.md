@@ -25,9 +25,11 @@ We've been building an application where we can see all of the sweets that vendo
 
 **Vendors can sell many different sweets and sweets can be sold by many different vendors.** This means we need to create a model that let's us join the two together. For sake of simplicity, we'd like the model to be called `VendorSweet`. It will connect **a single sweet** and **a single vendor** together. Make sure to put the appropriate attributes on this model.
 
-## Instructions / Deliverables
+## Instructions
 
-***To help complete this task we listed out the required steps below. Look through them carefully to get a sense of the requirements of this code challenge, then tackle them one by one.***
+Update the code of the application to meet the following deliverables. Where appropriate, follow RESTful naming conventions and the MVC pattern to divide responsibility.
+
+***Read through these deliverables carefully to understand the requirements for this code challenge. Tackle them one by one, as they build on each other sequentially.***
 
 1. Start with creating the `VendorSweet` model. It should have an attribute for the price at which the sweet will be sold by the vendor (use an integer data type for this column: we'll treat the numbers in it as the price, in cents). We'll need to make sure to also have the appropriate migration to our schema for this to work. It is always suggested to test that our migration worked, so go into the console and try to create your first `VendorSweet` with a given `Sweet`, `Vendor`, and price.
 
