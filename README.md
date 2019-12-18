@@ -17,13 +17,37 @@ In this repo, there is a Rails application with some features built out. Your jo
 
 Clone this repo. Then run `bundle install`, `rails db:migrate`, and `rails db:seed` to install dependencies and set up the database, and run `rails s` to start the server.
 
-## The Domain
+## Domain
 
-This application tracks vendors who sells sweets.
+This application tracks vendors who sell sweets.
 
 There are three models in the domain: Sweets, Vendors, and a join model VendorSweets.
 
 Vendors can have many sweets. Sweets can be sold by many vendors. The join model `VendorSweet` connects **one sweet** with **one vendor**.
+
+## What You Already Have
+
+The starter code has migrations, models, and seed data for the initial Sweet and Vendor models. There are also routes, controllers and views for the Sweet and Vendor index pages.
+
+Once you have followed the setup instructions above, visiting the `/vendors` route will display all of the Vendors. Similarly, visiting `/sweets` will list all the sweets.
+
+***Schema***
+
+Sweet
+
+| Column | Type |
+| ------------- | ------------- |
+| name | String |
+| created_at | DateTime |
+| updated_at  | DateTime  |
+
+Vendor
+
+| Column | Type |
+| ------------- | ------------- |
+| name  | String  |
+| created_at  | DateTime  |
+| updated_at  | DateTime  |
 
 ## Instructions
 
@@ -84,7 +108,7 @@ Add validations to the VendorSweet model so that:
 - the price is not a negative number
 - the price is an integer (not a decimal, like 99.5)
 
-Add error handling to the `VendorSweet` create action. If the VendorSweet is *not* valid, the form should show the validation error messages, with the values the user entered.
+Add error handling to the `VendorSweet` create action. If the VendorSweet is *not* valid, the form should show the validation error messages.
 
 ### 8. Additional Validation
 
