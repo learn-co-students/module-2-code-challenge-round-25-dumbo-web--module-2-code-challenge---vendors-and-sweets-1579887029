@@ -110,11 +110,18 @@ Add validations to the VendorSweet model so that:
 
 Add error handling to the `VendorSweet` create action. If the VendorSweet is *not* valid, the form should show the validation error messages.
 
-### 8. Additional Validation
+### 8. Advanced: VendorSweet Validation
 
 There should only be one `VendorSweet` for any pair of `Vendor` and `Sweet`.
 
-Add a validation to ensure that there is only one VendorSweet for a Vendor and Sweet pair. If necessary, update your error handling so that this new validation is also displayed to the user.
+Add a validation to ensure that there is only one VendorSweet for a Vendor and Sweet pair. Update your error handling so that this new validation is also displayed to the user.
+
+### 9. Advanced: Vendor Average Price
+
+On the Vendor index page, show:
+
+- the average price for all Sweets at the top of the page
+- the average price for each Vendor next to the Vendor's name
 
 ## Rubric
 
