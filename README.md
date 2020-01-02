@@ -106,7 +106,6 @@ Add validations to the VendorSweet model so that:
 
 - the price is not blank
 - the price is not a negative number
-- the price is an integer (not a decimal, like 99.5)
 
 Add error handling to the `VendorSweet` create action. If the VendorSweet is *not* valid, the form should show the validation error messages.
 
