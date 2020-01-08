@@ -122,6 +122,10 @@ On the Vendor index page, show:
 - the average price for all Sweets at the top of the page
 - the average price for each Vendor next to the Vendor's name
 
+### Features Demo
+
+![screen capture of demo of features](sweets-features-demo.gif)
+
 ## Rubric
 
 ### Models, Associations, and Validations
