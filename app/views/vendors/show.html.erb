@@ -1,0 +1,4 @@
+<%=@vendor.name %>
+<% @vendor.sweets.each do |sweet| %>
+<%= link_to sweet.name, sweet_path(sweet)%>
+<% end %>

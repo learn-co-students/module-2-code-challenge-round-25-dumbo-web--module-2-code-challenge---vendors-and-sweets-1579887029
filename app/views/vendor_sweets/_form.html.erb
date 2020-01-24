@@ -1,0 +1,9 @@
+<%= form_for @vendorsweet do |f| %>
+    <%= f.label :price%>
+    <%= f.number_field :price %>
+    <%= f.label :sweet_id %>
+    <%= f.collection_select :sweet_id, @sweets, :id, :name%>
+    <%= f.label :guest_id %>
+    <%= f.collection_select :vendor_id, @vendors, :id, :name %>
+    <%= f.submit %>
+    <% end %>

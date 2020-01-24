@@ -1,0 +1,6 @@
+<%= render 'form' %>
+<% if flash[:errors] %>
+<% flash[:errors].each do |message| %>
+<p style="color: red;"> <%= message %> </p>
+<% end%>
+<% end%>
